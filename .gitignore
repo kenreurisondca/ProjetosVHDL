@@ -1,1 +1,6 @@
 db/
+incremental_db/
+output_files/
+simulation/
+*.bak
+codigosVHDL_assignment_defaults.qdf

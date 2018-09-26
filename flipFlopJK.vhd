@@ -11,7 +11,7 @@ port(
 end flipFlopJK;
 
 architecture flipFlopArch of flipFlopJK is
-signal qsignal : std_logic;
+signal qsignal : std_logic:='0';
 begin
 	process(clk, clear, preset)
 	begin
