@@ -4,3 +4,4 @@ output_files/
 simulation/
 *.bak
 codigosVHDL_assignment_defaults.qdf
+*.temp
