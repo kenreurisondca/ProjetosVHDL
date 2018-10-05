@@ -7,8 +7,7 @@ port(
 	d : out std_logic_vector(6 downto 0);
 	clr : in std_logic;
 	S : in std_logic;
-	--Qc : out std_logic_vector(2 downto 0);
-	enable : in std_logic
+	Qc : out std_logic_vector(2 downto 0)
 );
 end contador3Bits;
 
@@ -31,9 +30,9 @@ architecture contador3BitsArch of contador3Bits is
 		signal Qs : std_logic_vector(2 downto 0) := "000";
 begin
 
-	FF00 : flipFlopJK port map('0', '0', clr, '1', clock, Qs(0) );
-	FF01 : flipFlopJK port map('0', '0', clr, '1', Qs(0), Qs(1) );
-	FF02 : flipFlopJK port map('0', '0', clr, '1', Qs(1), Qs(2) );
-	--Qc <= Qs;
+	FF00 : flipFlopJK port map(S, S, clr, '1', clock, Qs(0) );
+	FF01 : flipFlopJK port map(S, S, clr, '1', Qs(0), Qs(1) );
+	FF02 : flipFlopJK port map(S, S, clr, '1', Qs(1), Qs(2) );
+	Qc <= Qs;
 	D7S : display7segment port map(Qs(0), Qs(1),Qs(2),'0', d );
 end contador3BitsArch;
